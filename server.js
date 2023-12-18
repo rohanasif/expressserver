@@ -1,4 +1,3 @@
-// app.js
 const express = require("express");
 const data = require("./data");
 const app = express();
