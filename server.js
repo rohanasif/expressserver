@@ -1,12 +1,17 @@
 const express = require("express");
 const data = require("./data");
 const app = express();
-const port = 3000;
+app.use(express.json());
 
-app.get("/api/data", (req, res) => {
-  res.json(data);
+app.get("/", (req, res) => {
+  res.send("Hello backend");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.post("/about", (req, res) => {
+  res.json(data);
+  console.log(req.body);
+});
+
+app.listen(5000, () => {
+  console.log("server is running on the port 5000");
 });
